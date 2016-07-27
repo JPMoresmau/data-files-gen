@@ -2,7 +2,7 @@ name:                data-files-gen
 version:             0.0.0.1
 synopsis:            Generate data-files Cabal file field from existing files
 description:         Please see README.md
-homepage:            https://github.com/jpmoresmau/data-files-gen#readme
+homepage:            https://github.com/JPMoresmau/data-files-gen#readme
 license:             BSD3
 license-file:        LICENSE
 author:              JP Moresmau
@@ -47,4 +47,4 @@ test-suite data-files-gen-test
 
 source-repository head
   type:     git
-  location: https://github.com/jpmoresmau/data-files-gen
+  location: https://github.com/JPMoresmau/data-files-gen
