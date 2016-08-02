@@ -13,7 +13,8 @@ main = do
   args <- getArgs
   (opts,fps) <- parseOpts args
   res <- mapM (generateList opts) fps
-  mapM_ putStrLn $ concat res
+  let ind = replicate (optIndent opts) ' '
+  mapM_ (\s->putStrLn (ind ++ s)) $ concat res
 
 -- | Parse options
 parseOpts :: [String] -> IO (Options,[String])
@@ -34,4 +35,8 @@ options =  [
     (ReqArg (\f opts -> opts { optExcludeExts = S.insert ("."++f) $ optExcludeExts opts })
               "EXT")
       "extension to exclude"
+    ,Option ['i']     ["indent"]
+    (ReqArg (\i opts -> opts { optIndent = read i })
+              "INT")
+      "number of spaces to use for indentation"
   ]
